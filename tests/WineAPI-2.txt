@@ -1,0 +1,34 @@
+*** Settings ***
+Library  Collections
+Library  RequestsLibrary
+Library  json.JSONEncoder
+
+*** Variables ***
+${host}	10.0.1.27
+${port}	8888
+${url}  http://${host}:${port}
+${path}  /api/wines
+
+
+*** Test Cases ***
+Wines API status is 200
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+
+  should be equal as strings  ${resp.status_code}  200
+
+
+Wines Is Not Empty
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+
+  should not be empty  ${json['wine'][0]}
+
+
+Wines Contains 12 wines
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+
+  length should be  ${json['wine']}  12

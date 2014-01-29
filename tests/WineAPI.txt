@@ -1,0 +1,18 @@
+*** Settings ***
+Library  Collections
+Library  RequestsLibrary
+Library  json.JSONEncoder
+
+*** Variables ***
+${host}	10.0.1.27
+${port}	8888
+${url}  http://${host}:${port}
+${path}  /api/wines
+
+
+*** Test Cases ***
+Check Status
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  should be equal as strings  ${resp.status_code}  200
+
