@@ -1,0 +1,20 @@
+*** Settings ***
+library             DatabaseLibrary
+library             pymysql
+Suite Setup         Connect To Database    @{database}
+
+*** Variables ***
+@{database}     pymysql     cellar    root    root    localhost  3306  
+
+*** Test Cases ***
+Output All Wines
+  @{results}=  Query  select * from wine;
+  Log  "@{results}"  WARN
+
+Output First Wine
+  @{results}=  Query  select * from wine;
+  Log  "@{results[0]}"  WARN
+
+Output Name of First Wine
+  @{results}=  Query  select name from wine;
+  Log  "@{results[0]}"  WARN
