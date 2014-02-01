@@ -2,13 +2,7 @@
 Library  Collections
 Library  RequestsLibrary
 Library  json.JSONEncoder
-
-*** Variables ***
-#${host}	10.0.1.27
-${host}  localhost
-${port}	8888
-${url}  http://${host}:${port}
-${path}  /api/wines
+Resource  CommonVariables.txt
 
 
 *** Test Cases ***
