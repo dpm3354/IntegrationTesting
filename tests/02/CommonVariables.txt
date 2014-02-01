@@ -1,0 +1,12 @@
+*** Variables ***
+
+### API Variables ###
+#${host}  10.0.1.27
+${host}  localhost
+${port}  8888
+${url}   http://${host}:${port}
+${path}  /api/wines
+
+### Database Variables ###
+${dbhost}  localhost
+${dbport}  3306
