@@ -1,0 +1,20 @@
+01
+=======
+
+* Initial setup and creation of simple tests.
+
+
+
+
+02
+=======
+
+* Moved variables to variables file as test suite grows… 
+  * IP changed for host, and had to change in 3 places.
+  * Added Database variables
+
+
+03
+======
+
+* Made DatabaseTest.txt data driven
