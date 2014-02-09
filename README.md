@@ -7,6 +7,16 @@ Author: Paul Merrill
 Beaufort Fairmont, LLC
 
 
+## Systems Under Test ##
+Using ccoenraets wine cellar php and node applications for this example.
+
+Old app:
+https://github.com/ccoenraets/wine-cellar-php
+
+New app:
+https://github.com/ccoenraets/nodecellar
+
+
 ## Abstract ##
 Your company’s execs have decided to re-write their old web application using new technologies.  They want to be able to say their platform is “api based” and “uses no-sql” while sipping martinis at the country club with the other suits.  After all, the most buzz words wins, right?
 
