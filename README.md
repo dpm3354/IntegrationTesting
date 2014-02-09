@@ -33,4 +33,10 @@ Get exposure to RobotFramework, Mongo, and NodeJS and learn techniques for integ
 
 
 
+## Organization ##
+
+./tests is organized into sections.  Each subsequent section is a step forward in the history of how to create the test suites for the old application (01-04) and the new one (05-?).
+
+See the LogOfChanges.txt for more information on each section and what I was attempting to show with each section.
+
 
