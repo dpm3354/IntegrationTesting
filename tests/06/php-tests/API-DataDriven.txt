@@ -1,0 +1,28 @@
+*** Settings ***
+Library  Collections
+Library  RequestsLibrary
+Library  json.JSONEncoder
+Resource  CommonVariables.txt
+Test Template  Check for Wine
+
+*** Test Cases ***
+Check for Block Nine  0  BLOCK NINE
+Check for Bodega Lurton  1  BODEGA LURTON
+Check for Chataeu  2  CHATEAU DE SAINT COSME
+Check for Doyenne  3  CHATEAU LE DOYENNE
+Check for Bouscat  4  DOMAINE DU BOUSCAT
+Check for Serene   5  DOMAINE SERENE
+Check for Crianza  6  LAN RIOJA CRIANZA
+Check for Les Morizottes  7  LES MORIZOTTES
+Check for Margerum  8  MARGERUM SYBARITE
+Check for Owen      9  OWEN ROE "EX UMBRIS"
+Check for Rex Hill  10  REX HILL
+Check for Viticcio  11  VITICCIO CLASSICO RISERVA
+
+*** Keywords ***
+Check for Wine
+  [Arguments]  ${index}  ${winename}
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+  should be equal  ${json['wine'][${index}]['name']}  ${winename}

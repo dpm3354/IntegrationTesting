@@ -1,0 +1,16 @@
+*** Settings ***
+library             DatabaseLibrary
+library             pymysql
+Suite Setup         Connect To Database    @{database}
+Resource            CommonVariables.txt
+
+*** Variables ***
+@{database}     pymysql     cellar    root    root    ${dbhost}  ${dbport}  
+
+*** Test Cases ***
+Check Wine Count
+  Row Count Is Equal To X  select * from wine;  12
+
+Check for Chateau
+  Check if exists in database  select * from wine where name='CHATEAU DE SAINT COSME';
+

@@ -40,9 +40,20 @@ What if there is a mistake in your tests?  Hard-coded expectations should be che
 * wget on old api, wget on new api  in files wines.json.old wines.json.new
 * make note of the issue or bug it and move on.
 
+
 06
 =======
+* Updated the tests to not look for the wines array, just assume you get the wines array back (which we do).
+* notice there are 24 wines now!!!  (something went wrong in migration?)
+
+
+07
+=======
 * we know the api is different.  What about the data?
+
+
+
+
 
 
 

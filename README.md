@@ -3,7 +3,7 @@
 This repository is for a workshop at TISQA 2014, March 12 in Chapel Hill, NC. 
 
 ## Info ##
-Author: Paul Merrill
+Author: Paul Merrill<br/>
 Beaufort Fairmont, LLC
 
 
