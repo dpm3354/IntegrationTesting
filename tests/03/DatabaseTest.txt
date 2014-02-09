@@ -14,6 +14,3 @@ Check Wine Count
 Check for Chateau
   Check if exists in database  select * from wine where name='CHATEAU DE SAINT COSME';
 
-Output Name of First Wine
-  @{results}=  Query  select name from wine;
-  Log  "@{results[0]}"  WARN
