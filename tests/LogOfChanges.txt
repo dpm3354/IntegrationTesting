@@ -25,6 +25,13 @@ php web page http://localhost:8888/#
 04
 =======
 
+* Cross-check
+What if there is a mistake in your tests?  Hard-coded expectations should be checked.
+
+
+05
+=======
+
 * move to other api
 
 
