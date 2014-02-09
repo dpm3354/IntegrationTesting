@@ -1,13 +1,13 @@
-*** Integration Testing: Why, When, and How? ***
+# Integration Testing: Why, When, and How? #
 
 This repository is for a workshop at TISQA 2014, March 12 in Chapel Hill, NC. 
 
-*** Info ***
+## Info ##
 Author: Paul Merrill
 Beaufort Fairmont, LLC
 
 
-*** Abstract ***
+## Abstract ##
 Your company’s execs have decided to re-write their old web application using new technologies.  They want to be able to say their platform is “api based” and “uses no-sql” while sipping martinis at the country club with the other suits.  After all, the most buzz words wins, right?
 
 Now you’ve got to make sure all the functionality in the old app works in the new one, but how?
