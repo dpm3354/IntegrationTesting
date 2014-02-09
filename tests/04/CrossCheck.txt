@@ -1,0 +1,36 @@
+*** Settings ***
+Library             DatabaseLibrary
+Library             pymysql
+Library             Collections
+Library             RequestsLibrary
+Library             json.JSONEncoder
+Suite Setup         Connect To Database    @{database}
+Resource            CommonVariables.txt
+Test Template	    Check for Wine
+
+
+
+*** Test Cases ***
+Check for 0th Wine  	0
+Check for 1st Wine  	1 
+Check for 2nd Wine  	2 
+Check for 3rd Wine	3 
+Check for 4th Wine 	4
+Check for 5th Wine 	5
+Check for 6th Wine 	6
+Check for 7th Wine 	7
+Check for 8th Wine 	8
+Check for 9th Wine 	9
+Check for 10th Wine 	10
+Check for 11th Wine 	11 
+
+*** Keywords ***
+
+Check for Wine
+  [Arguments]  ${index}
+
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+  LOG	Checking for ${json['wine'][${index}]['name']}   WARN
+  Check if exists in database  select * from wine where name='${json['wine'][${index}]['name']}';
