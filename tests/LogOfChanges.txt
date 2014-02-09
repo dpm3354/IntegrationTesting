@@ -31,8 +31,18 @@ What if there is a mistake in your tests?  Hard-coded expectations should be che
 
 05
 =======
+* MAKE SURE MONGO is STARTED: mongod
+* move to other API
+* made dirs for both test suites
+* created API-2.txt
+* changed url and port and path.
+* note tests fail… why?  Because the json from the api is different.  no 'wine' section
+* wget on old api, wget on new api  in files wines.json.old wines.json.new
+* make note of the issue or bug it and move on.
 
-* move to other api
+06
+=======
+* we know the api is different.  What about the data?
 
 
 
