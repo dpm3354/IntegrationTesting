@@ -25,7 +25,5 @@ Check for Morizottes  LES MORIZOTTES
 
 Check for Wine
   [Arguments]  ${winename}
- # Check if exists in database  select * from wine where name='${winename}';
- # Validate Mongodb Collection	winedb	wines
   ${wine}=  Retrieve Mongodb Records With Desired Fields  winedb  wines  {"name": "${winename}"}  name  TRUE
   should contain  ${wine}  ${winename}

@@ -54,6 +54,7 @@ What if there is a mistake in your tests?  Hard-coded expectations should be che
 * pip install pymongo
 * sudo python setup.py install
 * (Manhandled) Added mongodblibrary to /Library/Python/2.7/site-packages (?)
+* Updated DatabaseTest-DataDriven.txt
 
 
 
