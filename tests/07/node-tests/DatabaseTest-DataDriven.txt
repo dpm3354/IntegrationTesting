@@ -1,0 +1,31 @@
+*** Settings ***
+#library             DatabaseLibrary
+Library             MongoDBLibrary
+#library             pymysql
+#library             pymongo
+Resource            CommonVariables.txt
+Suite Setup         Connect To Mongodb    @{database}
+Test Template	Check for Wine
+
+*** Test Cases ***
+Check for Wine  CHATEAU DE SAINT COSME
+Check for Lan Rioja  LAN RIOJA CRIANZA
+Check for Margerum  MARGERUM SYBARITE
+Check for Owen  OWEN ROE "EX UMBRIS"
+Check for Rex Hill  REX HILL
+Check for Viticcio  VITICCIO CLASSICO RISERVA
+Check for Doyenne  CHATEAU LE DOYENNE
+Check for Bouscat  DOMAINE DU BOUSCAT
+Check for Block Nine  BLOCK NINE
+Check for Serene  DOMAINE SERENE
+Check for Lurton  BODEGA LURTON
+Check for Morizottes  LES MORIZOTTES
+
+*** Keywords ***
+
+Check for Wine
+  [Arguments]  ${winename}
+ # Check if exists in database  select * from wine where name='${winename}';
+ # Validate Mongodb Collection	winedb	wines
+  ${wine}=  Retrieve Mongodb Records With Desired Fields  winedb  wines  {"name": "${winename}"}  name  TRUE
+  should contain  ${wine}  ${winename}

@@ -1,0 +1,29 @@
+*** Settings ***
+Library  Collections
+Library  RequestsLibrary
+Library  json.JSONEncoder
+Resource  CommonVariables.txt
+
+
+*** Test Cases ***
+Wines API status is 200
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+
+  should be equal as strings  ${resp.status_code}  200
+
+
+Wines Is Not Empty
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+
+  should not be empty  ${json[0]}
+
+
+Wines Contains 12 wines
+  Create Session  wines  ${url}
+  ${resp}=  Get  wines  ${path}
+  ${json}=      To JSON  ${resp.content}
+
+  length should be  ${json}  12

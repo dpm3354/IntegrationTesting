@@ -50,9 +50,10 @@ What if there is a mistake in your tests?  Hard-coded expectations should be che
 07
 =======
 * we know the api is different.  What about the data?
-
-
-
+* https://github.com/iPlantCollaborativeOpenSource/Robotframework-MongoDB-Library
+* pip install pymongo
+* sudo python setup.py install
+* (Manhandled) Added mongodblibrary to /Library/Python/2.7/site-packages (?)
 
 
 

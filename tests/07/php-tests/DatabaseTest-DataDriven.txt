@@ -1,0 +1,28 @@
+*** Settings ***
+library             DatabaseLibrary
+library             pymysql
+Suite Setup         Connect To Database    @{database}
+Resource            CommonVariables.txt
+Test TEmplate	Check for Wine
+
+*** Test Cases ***
+Check for Wine  CHATEAU DE SAINT COSME
+Check for Lan Rioja  LAN RIOJA CRIANZA
+Check for Margerum  MARGERUM SYBARITE
+Check for Owen  OWEN ROE "EX UMBRIS"
+Check for Rex Hill  REX HILL
+Check for Viticcio  VITICCIO CLASSICO RISERVA
+Check for Doyenne  CHATEAU LE DOYENNE
+Check for Bouscat  DOMAINE DU BOUSCAT
+Check for Block Nine  BLOCK NINE
+Check for Serene  DOMAINE SERENE
+Check for Lurton  BODEGA LURTON
+Check for Morizottes  LES MORIZOTTES
+
+*** Keywords ***
+
+Check for Wine
+  [Arguments]  ${winename}
+  Check if exists in database  select * from wine where name='${winename}';
+
+
