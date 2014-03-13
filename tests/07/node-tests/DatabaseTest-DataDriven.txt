@@ -2,7 +2,6 @@
 #library             DatabaseLibrary
 Library             MongoDBLibrary
 #library             pymysql
-#library             pymongo
 Resource            CommonVariables.txt
 Suite Setup         Connect To Mongodb    @{database}
 Test Template	Check for Wine
