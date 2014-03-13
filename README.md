@@ -39,4 +39,22 @@ Get exposure to RobotFramework, Mongo, and NodeJS and learn techniques for integ
 
 See the LogOfChanges.txt for more information on each section and what I was attempting to show with each section.
 
+## Installation ##
+Download & Install Python 2.7
+http://www.python.org/getit/
+
+Install PIP
+http://www.pip-installer.org/en/latest/installing.html#install-or-upgrade-pip
+
+Install RobotFramework
+pip install robotframework
+
+Install RequestLibrary
+pip install –U robotframework-requests
+
+Install pymysql
+pip install pymysql
+pip install robotframework-databaselibrary
+
+This and host info available at:  bftft.com/?q=node/53
 
